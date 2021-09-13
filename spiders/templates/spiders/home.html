@@ -1,0 +1,76 @@
+{% extends "spiders/base.html" %}
+{% block content %}
+
+
+<!-- Title Section -->
+<section id='title'>
+    <div class="logo">
+        <h1>Spiders Collection</h1>
+        {% if user.is_authenticated %}
+        <h2>Welcome {{user.username}}</h2>
+        <a href="#item-list" role="button" class="btn btn-lg btn-outline-danger login-button">Spider List</a>
+        <a href="{%url 'logout' %}" class="btn btn-lg btn-outline-danger login-button">Logout</a>
+        {% else %}
+        <h2>Beware of the beasts...</h2>
+        <a href="{%url 'login' %}" role="button" class="btn btn-lg btn-outline-danger login-button">Login</a>
+        <a href="{%url 'register' %}" class="btn btn-lg btn-outline-danger login-button">Register</a>
+        {% endif %}
+    </div>
+</section>
+
+<section id="features">
+    <div style='height: 600px' class="row">
+      <div class="col-lg-6 feature-box">
+        <h3 style='padding-top: 170px'>They are dangerous...</h3>
+        <p>Almost all spiders are venomous.</p>
+      </div>
+      <div class="col-lg-4 feature-box">
+        <h3 style='padding-top: 170px'>They watch you sleep...</h3>
+        <p>There is a spider in three out of every four bedrooms.</p>
+      </div>
+    </div>
+   
+        <div class="titleCont">
+            <h1 class="main-title" id="main-title">
+                "Here, in the forest,<br><span style="padding-left:100px">dark and deep,</span><br><span style="padding-right:110px">I offer you,</span><br><span style="padding-left:-20px">eternal sleep."</span>
+            </h1>
+        </div>
+        
+  </section> 
+
+<!-- Spider List Section -->
+<section id='item-list'>
+    <div class="container-fluid all-spiders ">
+        <h2> List of The Beasts</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for spider in spiders %}
+                {% if forloop.first %}<div class="carousel-item active">
+                    <div class='row'>{% endif %}
+                        <div class='col-12 col-lg-3 col-md-4 col-sm-12 spider-list'>
+                            <a href="{% url 'species:detail' spider.pk %}">
+                                <img class="spider-image" src='{{ spider.spider_image.url }}'>
+                            </a>
+                            <p class="spider-name">{{ spider.name }}</p>
+                            <p>{{ spider.difficulty }}</p>
+                        </div>
+                        {% if forloop.counter|divisibleby:8 %}</div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">{% endif %}
+                  {% if forloop.last %}</div></div>
+                {% endif %}
+                {% endfor %}
+            </div><a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+</section>
+
+
+{% endblock content %}

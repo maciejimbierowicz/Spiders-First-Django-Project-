@@ -1,0 +1,18 @@
+{% extends "spiders/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form class='login-form'method="POST">
+            {% csrf_token %}
+            <h2>Join Today</h2>
+            {{ form|crispy }}
+        <div class="form-group">
+            <button class="btn btn-primary" type='submit'>Sign Up</button>
+        </div>
+        <p>Already have an account? <a href="{% url 'login' %}""> Login</a> </p>
+        <br><a href="{% url 'species:spiders-home' %}">Back to Home Page</a>
+    </form>
+    </div>
+
+
+{% endblock content %}

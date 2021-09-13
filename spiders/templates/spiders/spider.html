@@ -1,0 +1,28 @@
+{% extends "spiders/base.html" %}
+{% block content %}
+
+<!-- <div class="container about-spider">
+    <h2>{{ spider.name }}</h2>
+    <img class='spider-about-img' src='{{ spider.spider_image.url }}' <ul>
+    <p>{{ spider.info }}</p>
+    <p>Difficulty: {{ spider.difficulty }}</p>
+</div> -->
+<div class= "about-spider">
+<h2 class="spider-h2" style="text-align:center; color: rrgb(75, 13, 13)"> SPIDER INFO </h2>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top blur-img" src='{{ spider.spider_image.url }}' alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><strong>{{ spider.name }}</strong></h5>
+      <p class="card-text">{{ spider.info }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Difficulty: {{ spider.difficulty }}</li>
+      <!-- <li class="list-group-item">Dapibus ac facilisis in</li> -->
+    </ul>
+    <div class="card-body">
+      <a href="{% url 'species:spiders-home'%}" class="card-link">Back to Home Page</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

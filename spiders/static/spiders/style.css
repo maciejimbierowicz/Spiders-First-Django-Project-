@@ -1,0 +1,179 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Special Elite', cursive;
+}
+
+h1 {
+    position:relative;
+    padding-top: 0 auto 0 auto;
+    left: 180px;
+    font-size: 4.5rem;
+    padding-bottom: 100px;
+}
+
+
+
+
+
+
+/*------TITLE SECTION --------- */
+
+
+
+.login-button {
+    margin: auto 15px;
+    position: relative;
+    left: 620px;
+    bottom: 50px
+}
+
+
+.logo {
+    padding: 10% 15% 20%;
+    margin: 0 0;
+    background: url("../../../media/images/background2.jpg");
+    background-size: cover;
+}
+
+.logo h2 {
+    color: rgb(75, 13, 13);
+    position: relative;
+    text-align: right;
+    bottom: 80px;
+    right: 50px
+}
+
+#features {
+    padding: 0 50px 70px 50px;
+    background: url("../../../media/images/background7.jpg");
+    background-size: cover;
+    color: rgb(75, 13, 13);
+    text-align:center;
+
+
+}
+
+@media (max-width: 1028px) {
+    .logo, .logo h2, h1, .login-button  {
+        position: static;
+        text-align: center;
+        background-color: black;
+        background: none
+    }
+
+    #features {
+        padding-bottom: 600px
+    }
+
+    .main-title {
+        visibility: hidden;
+    }
+   
+}
+/*----- SPIDER LIST SECTION -------*/
+
+.all-spiders {
+    padding-top: 100px;
+    text-align:center;
+    padding-bottom: 100px
+}
+
+.all-spiders h2 {
+    padding-top: 100px;
+    font-size: 3rem;
+    padding-bottom: 30px
+}
+
+.carousel-item {
+    padding: 2% 17%;
+}
+
+.spider-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color:rgb(75, 13, 13)
+}
+
+.spider-list {
+    font-size: 17px;
+}
+
+.spider-list:hover {
+    transform: scale(1.05);
+}
+
+.spider-name {
+    color: white;
+    padding: 30% auto;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+/* ------- FOOTER ------- */
+.footer-new {
+    text-align: center;
+    margin: 0;
+}
+
+.footer-new p {
+    padding: 3% 10%;
+}
+
+/*-------- ABOUT SPIDER ----------- */
+
+.about-spider {
+    padding-top: 100px;
+    text-align: center;
+}
+
+
+.card-img-top {
+    border: 2px solid #000;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.8);
+  }
+
+.spider-h2 {
+    color: rgb(75, 13, 13);
+    font-size: 4rem;
+}
+
+.card {
+    color: rgb(75, 13, 13);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    padding-bottom: 100px
+}
+
+.card-title {
+    font-size: 1.5rem
+}
+
+p.card-text {
+    color: white;
+    text-align: justify
+}
+
+/* ---- QUOTE SECTION ------ */
+
+
+
+.main-title {
+position: relative;
+right: 50px;
+font-weight: 400;
+font-size: 40px;
+color: white;
+font-family: 'Bellefair', serif;
+line-height:1.3;
+}
+
+
+/* ----USER SECTION---*/
+
+form {
+    margin: 10% 20%;
+}
